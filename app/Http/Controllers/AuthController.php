@@ -11,12 +11,13 @@ use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
-   
+    // MEMUNCULKAN LOGIN 
     public function showLogin()
     {
         return view('auth.login');
     }
 
+    // BAGIAN REGISTER 
     public function showRegister()
     {
         return view('auth.register');
@@ -59,19 +60,19 @@ class AuthController extends Controller
     'type'     => 'required|in:vip,regular',
     'phone'    => 'required|string|max:15', 
 ]);
-// menambahkan admin secara manual  
+// untuk menambahkan admin secara manual  
 // php artisan tinker
 
 // use App\Models\User;
 // > use Illuminate\Support\Facades\Hash;
 // >
 // > User::create([
-// .     'name' => 'Admin Name',
-// .     'email' => 'admin@example.com',
-// .     'password' => Hash::make('password_admin'),
-// .     'role' => 'admin',
-// .     'phone' => '08123456789',
-// . ]);
+//      'name' => 'Admin Name',
+//      'email' => 'admin@example.com',
+//      'password' => Hash::make('password_admin'),
+//      'role' => 'admin',
+//      'phone' => '08123456789',
+//  ]);
 
     $user = User::create([
     'name'     => $request->name,

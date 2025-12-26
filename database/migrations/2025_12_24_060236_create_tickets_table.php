@@ -15,6 +15,7 @@ return new class extends Migration
             $table->enum('type', ['vip', 'regular']);
             $table->enum('status', ['waiting', 'checked_in'])->default('waiting');
             $table->timestamp('ordered_at')->useCurrent();
+            $table->timestamps();
         });
     }
 
